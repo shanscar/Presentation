@@ -110,12 +110,12 @@
   margin-top: 4px;
 }
 
-/* ===== Accent Themes — left border + tinted background ===== */
-.reveal .slides section.accent-blue    { border-left: 5px solid var(--accent-blue);    background: var(--accent-blue-light); }
-.reveal .slides section.accent-coral   { border-left: 5px solid var(--accent-coral);   background: var(--accent-coral-light); }
-.reveal .slides section.accent-sage    { border-left: 5px solid var(--accent-sage);    background: var(--accent-sage-light); }
-.reveal .slides section.accent-lavender{ border-left: 5px solid var(--accent-lavender);background: var(--accent-lavender-light); }
-.reveal .slides section.accent-amber   { border-left: 5px solid var(--accent-amber);   background: var(--accent-amber-light); }
+/* ===== Accent Themes — left border (background via data-background-color) ===== */
+.reveal .slides section.accent-blue    { border-left: 5px solid var(--accent-blue); }
+.reveal .slides section.accent-coral   { border-left: 5px solid var(--accent-coral); }
+.reveal .slides section.accent-sage    { border-left: 5px solid var(--accent-sage); }
+.reveal .slides section.accent-lavender{ border-left: 5px solid var(--accent-lavender); }
+.reveal .slides section.accent-amber   { border-left: 5px solid var(--accent-amber); }
 
 /* Accent color applied to headings */
 .reveal .accent-blue     h1, .reveal .accent-blue     h2 { color: #3a6da8; }
@@ -184,9 +184,6 @@ body {
   background: var(--bg);
 }
 
-.reveal .slide-background {
-  background: var(--bg);
-}
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
