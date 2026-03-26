@@ -4,259 +4,262 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Presentation</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- Sidebar toggle button -->
-  <button id="sidebar-toggle" title="Toggle slide list (T)">☰</button>
+  <div class="reveal">
+    <div class="slides">
 
-  <!-- Thumbnail sidebar -->
-  <nav id="sidebar"></nav>
+      <!-- Slide 1: Title -->
+      <section class="title-slide accent-blue" data-transition="zoom" id="slide-1">
+        <div class="slide-inner">
+          <h1>演講標題<br><span class="en">Presentation Title</span></h1>
+          <p class="subtitle">副標題內容<br><span class="en">Subtitle goes here</span></p>
+          <p class="meta">演講者姓名 · 日期<br><span class="en">Speaker Name · Date</span></p>
+        </div>
+      </section>
 
-  <div id="deck">
+      <!-- Slide 2: Agenda -->
+      <section class="section-header accent-coral" data-transition="convex" id="slide-2">
+        <div class="slide-inner">
+          <h2>議程<br><span class="en">Agenda</span></h2>
+          <p>本次演講的主要內容概覽<br><span class="en">Overview of today's presentation</span></p>
+        </div>
+      </section>
 
-    <!-- Slide 1: Title -->
-    <section class="slide title-slide accent-blue" id="slide-1">
-      <div class="slide-inner">
-        <h1>演講標題<br><span class="en">Presentation Title</span></h1>
-        <p class="subtitle">副標題內容<br><span class="en">Subtitle goes here</span></p>
-        <p class="meta">演講者姓名 · 日期<br><span class="en">Speaker Name · Date</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 2: Agenda -->
-    <section class="slide section-header accent-coral" id="slide-2">
-      <div class="slide-inner">
-        <h2>議程<br><span class="en">Agenda</span></h2>
-        <p>本次演講的主要內容概覽<br><span class="en">Overview of today's presentation</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 3 -->
-    <section class="slide content-center accent-sage" id="slide-3">
-      <div class="slide-inner">
-        <h2>第三頁標題<br><span class="en">Slide 3 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 4 -->
-    <section class="slide content-left-right accent-lavender" id="slide-4">
-      <div class="slide-inner">
-        <div class="col">
-          <h2>左欄<br><span class="en">Left Column</span></h2>
+      <!-- Slide 3 -->
+      <section class="content-center accent-sage" data-transition="slide" id="slide-3">
+        <div class="slide-inner">
+          <h2>第三頁標題<br><span class="en">Slide 3 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-        <div class="col">
-          <h2>右欄<br><span class="en">Right Column</span></h2>
+      </section>
+
+      <!-- Slide 4 -->
+      <section class="content-left-right accent-lavender" data-transition="fade" id="slide-4">
+        <div class="slide-inner">
+          <div class="col">
+            <h2>左欄<br><span class="en">Left Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+          <div class="col">
+            <h2>右欄<br><span class="en">Right Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 5 -->
+      <section class="content-center accent-amber" data-transition="slide" id="slide-5">
+        <div class="slide-inner">
+          <h2>第五頁標題<br><span class="en">Slide 5 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 5 -->
-    <section class="slide content-center accent-amber" id="slide-5">
-      <div class="slide-inner">
-        <h2>第五頁標題<br><span class="en">Slide 5 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 6 -->
-    <section class="slide section-header accent-blue" id="slide-6">
-      <div class="slide-inner">
-        <h2>第六頁標題<br><span class="en">Slide 6 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 7 -->
-    <section class="slide content-center accent-coral" id="slide-7">
-      <div class="slide-inner">
-        <h2>第七頁標題<br><span class="en">Slide 7 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 8 -->
-    <section class="slide content-left-right accent-sage" id="slide-8">
-      <div class="slide-inner">
-        <div class="col">
-          <h2>左欄<br><span class="en">Left Column</span></h2>
+      <!-- Slide 6 -->
+      <section class="section-header accent-blue" data-transition="convex" id="slide-6">
+        <div class="slide-inner">
+          <h2>第六頁標題<br><span class="en">Slide 6 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-        <div class="col">
-          <h2>右欄<br><span class="en">Right Column</span></h2>
+      </section>
+
+      <!-- Slide 7 -->
+      <section class="content-center accent-coral" data-transition="slide" id="slide-7">
+        <div class="slide-inner">
+          <h2>第七頁標題<br><span class="en">Slide 7 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 9 -->
-    <section class="slide content-center accent-lavender" id="slide-9">
-      <div class="slide-inner">
-        <h2>第九頁標題<br><span class="en">Slide 9 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
+      <!-- Slide 8 -->
+      <section class="content-left-right accent-sage" data-transition="fade" id="slide-8">
+        <div class="slide-inner">
+          <div class="col">
+            <h2>左欄<br><span class="en">Left Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+          <div class="col">
+            <h2>右欄<br><span class="en">Right Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Slide 10 -->
-    <section class="slide section-header accent-amber" id="slide-10">
-      <div class="slide-inner">
-        <h2>第十頁標題<br><span class="en">Slide 10 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 11 -->
-    <section class="slide content-center accent-blue" id="slide-11">
-      <div class="slide-inner">
-        <h2>第十一頁標題<br><span class="en">Slide 11 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 12 -->
-    <section class="slide content-left-right accent-coral" id="slide-12">
-      <div class="slide-inner">
-        <div class="col">
-          <h2>左欄<br><span class="en">Left Column</span></h2>
+      <!-- Slide 9 -->
+      <section class="content-center accent-lavender" data-transition="slide" id="slide-9">
+        <div class="slide-inner">
+          <h2>第九頁標題<br><span class="en">Slide 9 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-        <div class="col">
-          <h2>右欄<br><span class="en">Right Column</span></h2>
+      </section>
+
+      <!-- Slide 10 -->
+      <section class="section-header accent-amber" data-transition="convex" id="slide-10">
+        <div class="slide-inner">
+          <h2>第十頁標題<br><span class="en">Slide 10 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 13 -->
-    <section class="slide content-center accent-sage" id="slide-13">
-      <div class="slide-inner">
-        <h2>第十三頁標題<br><span class="en">Slide 13 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 14 -->
-    <section class="slide section-header accent-lavender" id="slide-14">
-      <div class="slide-inner">
-        <h2>第十四頁標題<br><span class="en">Slide 14 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 15 -->
-    <section class="slide content-center accent-amber" id="slide-15">
-      <div class="slide-inner">
-        <h2>第十五頁標題<br><span class="en">Slide 15 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 16 -->
-    <section class="slide content-left-right accent-blue" id="slide-16">
-      <div class="slide-inner">
-        <div class="col">
-          <h2>左欄<br><span class="en">Left Column</span></h2>
+      <!-- Slide 11 -->
+      <section class="content-center accent-blue" data-transition="slide" id="slide-11">
+        <div class="slide-inner">
+          <h2>第十一頁標題<br><span class="en">Slide 11 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-        <div class="col">
-          <h2>右欄<br><span class="en">Right Column</span></h2>
+      </section>
+
+      <!-- Slide 12 -->
+      <section class="content-left-right accent-coral" data-transition="fade" id="slide-12">
+        <div class="slide-inner">
+          <div class="col">
+            <h2>左欄<br><span class="en">Left Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+          <div class="col">
+            <h2>右欄<br><span class="en">Right Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 13 -->
+      <section class="content-center accent-sage" data-transition="slide" id="slide-13">
+        <div class="slide-inner">
+          <h2>第十三頁標題<br><span class="en">Slide 13 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 17 -->
-    <section class="slide content-center accent-coral" id="slide-17">
-      <div class="slide-inner">
-        <h2>第十七頁標題<br><span class="en">Slide 17 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 18 -->
-    <section class="slide section-header accent-sage" id="slide-18">
-      <div class="slide-inner">
-        <h2>第十八頁標題<br><span class="en">Slide 18 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 19 -->
-    <section class="slide content-center accent-lavender" id="slide-19">
-      <div class="slide-inner">
-        <h2>第十九頁標題<br><span class="en">Slide 19 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
-
-    <!-- Slide 20 -->
-    <section class="slide content-left-right accent-amber" id="slide-20">
-      <div class="slide-inner">
-        <div class="col">
-          <h2>左欄<br><span class="en">Left Column</span></h2>
+      <!-- Slide 14 -->
+      <section class="section-header accent-lavender" data-transition="convex" id="slide-14">
+        <div class="slide-inner">
+          <h2>第十四頁標題<br><span class="en">Slide 14 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-        <div class="col">
-          <h2>右欄<br><span class="en">Right Column</span></h2>
+      </section>
+
+      <!-- Slide 15 -->
+      <section class="content-center accent-amber" data-transition="slide" id="slide-15">
+        <div class="slide-inner">
+          <h2>第十五頁標題<br><span class="en">Slide 15 Title</span></h2>
           <p>內容待填<br><span class="en">Content to be added</span></p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 21 -->
-    <section class="slide content-center accent-blue" id="slide-21">
-      <div class="slide-inner">
-        <h2>第二十一頁標題<br><span class="en">Slide 21 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
+      <!-- Slide 16 -->
+      <section class="content-left-right accent-blue" data-transition="fade" id="slide-16">
+        <div class="slide-inner">
+          <div class="col">
+            <h2>左欄<br><span class="en">Left Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+          <div class="col">
+            <h2>右欄<br><span class="en">Right Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Slide 22 -->
-    <section class="slide section-header accent-coral" id="slide-22">
-      <div class="slide-inner">
-        <h2>第二十二頁標題<br><span class="en">Slide 22 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
+      <!-- Slide 17 -->
+      <section class="content-center accent-coral" data-transition="slide" id="slide-17">
+        <div class="slide-inner">
+          <h2>第十七頁標題<br><span class="en">Slide 17 Title</span></h2>
+          <p>內容待填<br><span class="en">Content to be added</span></p>
+        </div>
+      </section>
 
-    <!-- Slide 23 -->
-    <section class="slide content-center accent-sage" id="slide-23">
-      <div class="slide-inner">
-        <h2>第二十三頁標題<br><span class="en">Slide 23 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
+      <!-- Slide 18 -->
+      <section class="section-header accent-sage" data-transition="convex" id="slide-18">
+        <div class="slide-inner">
+          <h2>第十八頁標題<br><span class="en">Slide 18 Title</span></h2>
+          <p>內容待填<br><span class="en">Content to be added</span></p>
+        </div>
+      </section>
 
-    <!-- Slide 24 -->
-    <section class="slide content-center accent-lavender" id="slide-24">
-      <div class="slide-inner">
-        <h2>第二十四頁標題<br><span class="en">Slide 24 Title</span></h2>
-        <p>內容待填<br><span class="en">Content to be added</span></p>
-      </div>
-    </section>
+      <!-- Slide 19 -->
+      <section class="content-center accent-lavender" data-transition="slide" id="slide-19">
+        <div class="slide-inner">
+          <h2>第十九頁標題<br><span class="en">Slide 19 Title</span></h2>
+          <p>內容待填<br><span class="en">Content to be added</span></p>
+        </div>
+      </section>
 
-    <!-- Slide 25: Closing -->
-    <section class="slide closing-slide accent-amber" id="slide-25">
-      <div class="slide-inner">
-        <h1>謝謝<br><span class="en">Thank You</span></h1>
-        <p class="subtitle">歡迎提問<br><span class="en">Questions & Discussion</span></p>
-      </div>
-    </section>
+      <!-- Slide 20 -->
+      <section class="content-left-right accent-amber" data-transition="fade" id="slide-20">
+        <div class="slide-inner">
+          <div class="col">
+            <h2>左欄<br><span class="en">Left Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+          <div class="col">
+            <h2>右欄<br><span class="en">Right Column</span></h2>
+            <p>內容待填<br><span class="en">Content to be added</span></p>
+          </div>
+        </div>
+      </section>
 
+      <!-- Slide 21 -->
+      <section class="content-center accent-blue" data-transition="slide" id="slide-21">
+        <div class="slide-inner">
+          <h2>第二十一頁標題<br><span class="en">Slide 21 Title</span></h2>
+          <p>內容待填<br><span class="en">Content to be added</span></p>
+        </div>
+      </section>
+
+      <!-- Slide 22 -->
+      <section class="section-header accent-coral" data-transition="convex" id="slide-22">
+        <div class="slide-inner">
+          <h2>第二十二頁標題<br><span class="en">Slide 22 Title</span></h2>
+          <p>內容待填<br><span class="en">Content to be added</span></p>
+        </div>
+      </section>
+
+      <!-- Slide 23 -->
+      <section class="content-center accent-sage" data-transition="slide" id="slide-23">
+        <div class="slide-inner">
+          <h2>第二十三頁標題<br><span class="en">Slide 23 Title</span></h2>
+          <p>內容待填<br><span class="en">Content to be added</span></p>
+        </div>
+      </section>
+
+      <!-- Slide 24 -->
+      <section class="content-center accent-lavender" data-transition="slide" id="slide-24">
+        <div class="slide-inner">
+          <h2>第二十四頁標題<br><span class="en">Slide 24 Title</span></h2>
+          <p>內容待填<br><span class="en">Content to be added</span></p>
+        </div>
+      </section>
+
+      <!-- Slide 25: Closing -->
+      <section class="closing-slide accent-amber" data-transition="zoom" id="slide-25">
+        <div class="slide-inner">
+          <h1>謝謝<br><span class="en">Thank You</span></h1>
+          <p class="subtitle">歡迎提問<br><span class="en">Questions & Discussion</span></p>
+        </div>
+      </section>
+
+    </div>
   </div>
 
-  <!-- Progress bar -->
-  <div id="progress-bar">
-    <div id="progress-fill"></div>
-  </div>
-
-  <!-- Slide counter -->
-  <div id="slide-counter">1 / 25</div>
-
-  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      progress: true,
+      overview: true,
+      center: true,
+      transition: 'slide',
+      transitionSpeed: 'default',
+      width: 1280,
+      height: 800,
+      margin: 0.04,
+      slideNumber: true,
+    });
+  </script>
 </body>
 </html>
