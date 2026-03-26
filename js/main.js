@@ -81,23 +81,32 @@
     }
   });
 
-  // Trackpad / mouse wheel navigation (debounced)
-  let wheelTimeout = null;
+  // Trackpad / mouse wheel navigation (accumulated delta + threshold)
+  let accumulatedDelta = 0;
+  let wheelCooldown = false;
+  let idleTimer = null;
+
   document.addEventListener('wheel', (e) => {
     e.preventDefault();
-    if (wheelTimeout) return;
+    if (wheelCooldown) return;
 
-    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-      if (e.deltaY > 0) next();
+    // Use the dominant axis
+    const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+    accumulatedDelta += delta;
+
+    // Reset idle timer — if no wheel events for 150ms, clear accumulated delta
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(() => { accumulatedDelta = 0; }, 150);
+
+    // Trigger navigation when threshold exceeded
+    if (Math.abs(accumulatedDelta) > 80) {
+      if (accumulatedDelta > 0) next();
       else prev();
-    } else {
-      if (e.deltaX > 0) next();
-      else prev();
+
+      accumulatedDelta = 0;
+      wheelCooldown = true;
+      setTimeout(() => { wheelCooldown = false; }, 400);
     }
-
-    wheelTimeout = setTimeout(() => {
-      wheelTimeout = null;
-    }, 600);
   }, { passive: false });
 
   // Touch / swipe support
@@ -141,6 +150,15 @@
     progressFill.style.background = getSlideAccent(slides[current]);
     slideCounter.textContent = (current + 1) + ' / ' + total;
   }
+
+  // Progress bar click-to-jump
+  const progressBar = document.getElementById('progress-bar');
+  progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const ratio = (e.clientX - rect.left) / rect.width;
+    const targetIndex = Math.round(ratio * (total - 1));
+    goTo(targetIndex);
+  });
 
   initFromHash();
 })();

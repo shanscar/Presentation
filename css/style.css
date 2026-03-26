@@ -32,12 +32,18 @@ html, body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  scrollbar-width: none;
   font-family:
     "Inter", "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
     -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 /* ===== Deck Container ===== */
@@ -204,6 +210,12 @@ p {
   height: 4px;
   background: rgba(0, 0, 0, 0.08);
   z-index: 100;
+  cursor: pointer;
+  transition: height 0.2s ease;
+}
+
+#progress-bar:hover {
+  height: 8px;
 }
 
 #progress-fill {
