@@ -98,8 +98,12 @@
   let wheelCooldown = false;
   let idleTimer = null;
 
+  // Prevent sidebar wheel events from reaching the slide navigation handler
+  document.getElementById('sidebar').addEventListener('wheel', (e) => {
+    e.stopPropagation();
+  }, { passive: true });
+
   document.addEventListener('wheel', (e) => {
-    if (document.getElementById('sidebar').contains(e.target)) return;
     e.preventDefault();
     if (wheelCooldown) return;
 
