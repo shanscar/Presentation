@@ -6,6 +6,7 @@
 
   let current = 0;
   let isAnimating = false;
+  let sidebarOpen = false;
 
   // Accent colors for progress bar
   const accentMap = {
@@ -46,6 +47,7 @@
     history.replaceState(null, '', '#slide-' + (index + 1));
 
     current = index;
+    updateThumbHighlight();
 
     setTimeout(() => {
       prev.classList.remove('prev');
@@ -58,6 +60,16 @@
 
   // Keyboard navigation
   document.addEventListener('keydown', (e) => {
+    if (e.key === 't' || e.key === 'T') {
+      e.preventDefault();
+      toggleSidebar();
+      return;
+    }
+    if (e.key === 'Escape' && sidebarOpen) {
+      e.preventDefault();
+      toggleSidebar(false);
+      return;
+    }
     switch (e.key) {
       case 'ArrowRight':
       case 'ArrowDown':
@@ -99,13 +111,13 @@
     idleTimer = setTimeout(() => { accumulatedDelta = 0; }, 150);
 
     // Trigger navigation when threshold exceeded
-    if (Math.abs(accumulatedDelta) > 80) {
+    if (Math.abs(accumulatedDelta) > 150) {
       if (accumulatedDelta > 0) next();
       else prev();
 
       accumulatedDelta = 0;
       wheelCooldown = true;
-      setTimeout(() => { wheelCooldown = false; }, 400);
+      setTimeout(() => { wheelCooldown = false; }, 600);
     }
   }, { passive: false });
 
@@ -160,5 +172,84 @@
     goTo(targetIndex);
   });
 
+  // ===== Sidebar =====
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  const thumbItems = [];
+
+  // Create backdrop
+  const backdrop = document.createElement('div');
+  backdrop.id = 'sidebar-backdrop';
+  document.body.appendChild(backdrop);
+
+  // Build thumbnail list
+  slides.forEach((slide, i) => {
+    const item = document.createElement('div');
+    item.className = 'thumb-item' + (i === current ? ' active' : '');
+
+    // Clone slide content as mini preview
+    const inner = document.createElement('div');
+    inner.className = 'thumb-item-inner';
+    inner.innerHTML = slide.innerHTML;
+
+    // Copy slide background & border styles
+    const computed = getComputedStyle(slide);
+    inner.style.background = computed.background;
+    inner.style.borderLeft = computed.borderLeft;
+    inner.style.display = 'flex';
+    inner.style.alignItems = 'center';
+    inner.style.justifyContent = 'center';
+    inner.style.padding = '60px 80px';
+
+    const label = document.createElement('span');
+    label.className = 'thumb-label';
+    label.textContent = (i + 1);
+
+    item.appendChild(inner);
+    item.appendChild(label);
+    sidebar.appendChild(item);
+    thumbItems.push(item);
+
+    item.addEventListener('click', () => {
+      goTo(i);
+      toggleSidebar(false);
+    });
+  });
+
+  // Scale thumbnails to fit
+  function scaleThumbItems() {
+    const thumbWidth = sidebar.clientWidth - 24; // account for padding
+    const scale = thumbWidth / 1920;
+    thumbItems.forEach((item) => {
+      const inner = item.querySelector('.thumb-item-inner');
+      inner.style.transform = 'scale(' + scale + ')';
+    });
+  }
+  scaleThumbItems();
+  window.addEventListener('resize', scaleThumbItems);
+
+  function updateThumbHighlight() {
+    thumbItems.forEach((item, i) => {
+      item.classList.toggle('active', i === current);
+    });
+    // Scroll active thumb into view
+    if (sidebarOpen && thumbItems[current]) {
+      thumbItems[current].scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }
+
+  function toggleSidebar(forceState) {
+    sidebarOpen = typeof forceState === 'boolean' ? forceState : !sidebarOpen;
+    sidebar.classList.toggle('open', sidebarOpen);
+    backdrop.classList.toggle('visible', sidebarOpen);
+    if (sidebarOpen) {
+      updateThumbHighlight();
+    }
+  }
+
+  sidebarToggle.addEventListener('click', () => toggleSidebar());
+  backdrop.addEventListener('click', () => toggleSidebar(false));
+
   initFromHash();
+  updateThumbHighlight();
 })();
