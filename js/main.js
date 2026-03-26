@@ -99,6 +99,7 @@
   let idleTimer = null;
 
   document.addEventListener('wheel', (e) => {
+    if (document.getElementById('sidebar').contains(e.target)) return;
     e.preventDefault();
     if (wheelCooldown) return;
 
