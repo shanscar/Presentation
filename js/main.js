@@ -219,7 +219,7 @@
 
   // Scale thumbnails to fit
   function scaleThumbItems() {
-    const thumbWidth = sidebar.clientWidth - 24; // account for padding
+    const thumbWidth = sidebar.clientWidth - 16; // account for padding
     const scale = thumbWidth / 1920;
     thumbItems.forEach((item) => {
       const inner = item.querySelector('.thumb-item-inner');
